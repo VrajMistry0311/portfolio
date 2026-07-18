@@ -1,0 +1,167 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--bg-primary);
+  background: var(--accent-amber);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+.downloadBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(255, 179, 71, 0.3);
+  color: var(--bg-primary);
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.skillBlock {
+  padding: 1.25rem 1.5rem;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.5s ease;
+}
+.visible .skillBlock,
+.skillBlock.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skillCategory {
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+}
+
+.skillList {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.experienceSection {
+  margin-bottom: 2.5rem;
+}
+
+.sectionLabel {
+  font-size: 0.85rem;
+  color: var(--accent-violet);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+}
+
+.position {
+  padding: 1.5rem 2rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.5s ease;
+}
+.position.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.posHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.posTitle {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.posCompany {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.posPeriod {
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.eduRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.cgpa {
+  font-size: 0.85rem;
+  color: var(--accent-amber);
+  font-weight: 600;
+  font-family: var(--font-heading);
+}
+
+.posBullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.posBullets li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.posBullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-cyan-dim);
+  border: 1px solid var(--accent-cyan);
+}
+
+@media (max-width: 768px) {
+  .posHeader {
+    flex-direction: column;
+  }
+  .eduRight {
+    align-items: flex-start;
+  }
+  .position {
+    padding: 1.25rem;
+  }
+}

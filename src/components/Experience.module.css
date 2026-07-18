@@ -1,0 +1,160 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--accent-cyan-dim), var(--accent-violet-dim), transparent);
+}
+
+.card {
+  padding: 2rem;
+  margin-left: 2rem;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 2.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  border: 3px solid var(--bg-primary);
+  box-shadow: 0 0 10px var(--accent-cyan-glow);
+  transform: translateX(-5px);
+}
+
+.cardVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cardIcon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.cardTitle {
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.cardSubtitle {
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+}
+
+.cardDescription {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: rgba(0, 240, 255, 0.02);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(0, 240, 255, 0.06);
+}
+
+.metric {
+  text-align: center;
+}
+
+.metricValue {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  line-height: 1.2;
+}
+
+.metricSuffix {
+  font-size: 1rem;
+  color: var(--accent-amber);
+}
+
+.metricLabel {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--accent-green);
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    display: none;
+  }
+  .card {
+    margin-left: 0;
+  }
+  .card::before {
+    display: none;
+  }
+  .card {
+    padding: 1.5rem;
+  }
+  .metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
